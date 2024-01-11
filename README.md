@@ -1,0 +1,2 @@
+# nvim
+Minimal neovim setup
