@@ -1,28 +1,6 @@
 require("core.options")
 require("core.keymaps")
 
-local YankHighlightGrp = vim.api.nvim_create_augroup('YankHighlightGrp', {}) -- highlight copy lines
-vim.api.nvim_create_autocmd('TextYankPost', {
-	group = YankHighlightGrp,
-  pattern = '*',
-  callback = function()
-    vim.highlight.on_yank({
-      higroup = 'IncSearch',
-      timeout = 40,
-    })
-  end,
-})
-
-local ThePrimeagenGroup = vim.api.nvim_create_augroup('ThePrimeagen', {}) --remove extra spaces
-vim.api.nvim_create_autocmd({"BufWritePre"}, {
-    group = ThePrimeagenGroup,
-    pattern = "*",
-    command = [[%s/\s\+$//e]],
-})
-
---do not autocomment when moving to a new line
-vim.cmd [[autocmd BufEnter * set fo-=c fo-=r fo-=o]]
-
 Bg = ''
 
 local function getNormal()

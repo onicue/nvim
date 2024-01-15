@@ -23,9 +23,9 @@ return {
         file_ignore_patterns = {".git/*", ".cache", ".ssh"},
         winblend = 5,
         borderchars = {
-        preview = { " ", " ", " ", " ", " ", " ", " ", " " },
-        prompt = { " ", " ", " ", " ", " ", " ", " ", " " },
-        results = { " ", " ", " ", " ", " ", " ", " ", " " },
+          preview = { " ", " ", " ", " ", " ", " ", " ", " " },
+          prompt = { " ", " ", " ", " ", " ", " ", " ", " " },
+          results = { " ", " ", " ", " ", " ", " ", " ", " " },
         },
 
         color_devicons = true,
@@ -37,8 +37,8 @@ return {
         mappings = {
           i = {
             ["<esc>"] = require('telescope.actions').close,
-            ["<C-j>"] = require('telescope.actions').move_selection_previous,
-            ["<C-k>"] = require('telescope.actions').move_selection_next,
+            ["<C-k>"] = require('telescope.actions').move_selection_previous,
+            ["<C-j>"] = require('telescope.actions').move_selection_next,
             ["<C-n>"] = false,
             ["<C-p>"] = false,
           },
@@ -59,8 +59,9 @@ return {
   keys = {
     {"<leader>ff", ":Telescope find_files<cr>",{silent = true, noremap = true}},
     {'<leader>fg', function()
-    require('telescope.builtin').grep_string({ search = vim.fn.input("Grep > ") })
+      require('telescope.builtin').grep_string()
     end},
-    {"<leader>fb", ":Telescope buffers<cr>", {silent = true, noremap = true}}
+    {"<leader>fb", ":Telescope buffers<cr>", {silent = true, noremap = true}},
+    {"<leader>xx", ":Telescope diagnostics<cr>", {silent = true, noremap = true}},
   }
 }

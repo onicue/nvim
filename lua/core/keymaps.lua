@@ -1,50 +1,42 @@
-local map = vim.keymap.set
-local opts = { silent = true }
+-- plugin key bindings -> plugins.configs.<name-of-plagin>
 
 ----navigation----
-map("n", "<M-j>", "<cmd>m+1<cr>", opts)
-map("n", "<M-k>", "<cmd>m-2<cr>", opts)
-map("n", "<M-h>", "<cmd><<cr>", opts)
-map("n", "<M-l>", "<cmd>><cr>", opts)
+vim.keymap.set("n", "<leader>l", "<cmd>bn<cr>")
+vim.keymap.set("n", "<leader>h", "<cmd>bp<cr>")
 
--- map("v", "<M-h>",":'<,'><|normal gv<cr>", opts) --need a silent!
--- map("v", "<M-l>",":'<,'>>|normal gv<cr>", opts)
--- map("v", "<M-k>",":'<,'>m '<-2|normal gv<cr>", opts)
--- map("v", "<M-j>",":'<,'>m '>+1|normal gv<cr>", opts)
+vim.keymap.set("n", "<leader>qq", ":w | bd<cr>")
+vim.keymap.set("n", "<leader>qz", ":bd<cr>")
+-----movement-----
+vim.keymap.set("i", "<C-j>", "<esc>:m .+1<CR>i")
+vim.keymap.set("i", "<C-k>", "<esc>:m .-2<CR>i")
 
-map("n", "<Space>n", "<cmd>bn<cr>")
-map("n", "<Space>v", "<cmd>bp<cr>")
+vim.keymap.set("v", "K", ":m '<-2<CR>'>gv")
+vim.keymap.set("v", "J", ":m '>+1<CR>'<gv")
 
------harpoon------
-map("n", "<leader>a",":lua require('harpoon.mark').add_file()<cr>", opts)
+vim.keymap.set("n", "<C-j>", ":m .+1<CR>==")
+vim.keymap.set("n", "<C-k>", ":m .-2<CR>==")
 
-map("n", "<Space>1",":lua require('harpoon.ui').nav_file(1)<cr>", opts)
-map("n", "<Space>2",":lua require('harpoon.ui').nav_file(2)<cr>", opts)
-map("n", "<Space>3",":lua require('harpoon.ui').nav_file(3)<cr>", opts)
-map("n", "<Space>4",":lua require('harpoon.ui').nav_file(4)<cr>", opts)
-map("n", "<Space>5",":lua require('harpoon.ui').nav_file(5)<cr>", opts)
-map("n", "<Space>6",":lua require('harpoon.ui').nav_file(6)<cr>", opts)
-map("n", "<Space>7",":lua require('harpoon.ui').nav_file(7)<cr>", opts)
-map("n", "<Space>8",":lua require('harpoon.ui').nav_file(8)<cr>", opts)
-map("n", "<Space>9",":lua require('harpoon.ui').nav_file(9)<cr>", opts)
+vim.keymap.set({"i", "n", "v"}, "<C-l>", "$")
+vim.keymap.set({"i", "n", "v"}, "<C-h>", "0")
+----indentation---
 
-map("n", "<space>hc", "lua require('harpoon.mark').clear_all()<cr>", opts)
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
+vim.keymap.set("n", "<", "<<")
+vim.keymap.set("n", ">", ">>")
 
-map("n", "<leader>j",":lua require('harpoon.ui').toggle_quick_menu()<cr>", opts)
+-----Quickfix-----
 
-map( "n","<space>t",
-  function()
-    local index = require("harpoon.mark").get_index_of(vim.fn.bufname())
-    require("harpoon.mark").rm_file(index)
-  end
-)
+vim.keymap.set("n", "<leader>mk", "<cmd>lnext<CR>zz")
+vim.keymap.set("n", "<leader>mj", "<cmd>lprev<CR>zz")
 
-map("n", "<leader>n", ":lua require('harpoon.ui').nav_next()<cr>", opts)
-map("n", "<leader>v", ":lua require('harpoon.ui').nav_prev()<cr>", opts)
+-------sugar------
+vim.keymap.set("t", "<ESC>", "<C-\\><C-n>")
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
------Telescope----
-map("n", "<leader>ff", ":lua require('telescope.builtin').find_files()<CR>", opts)
-map("n", "<leader>fg", ":lua require('telescope.builtin').live_grep()<CR>", opts)
+vim.keymap.set("x", "<leader>p", [["_dP]])
 
------NvimTree-----
-map("n", "<leader>fj", "<cmd>NvimTreeToggle<cr>", opts)
+vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])
+
+vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])

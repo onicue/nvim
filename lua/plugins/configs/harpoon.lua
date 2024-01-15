@@ -1,3 +1,5 @@
+local opts = {silent = true}
+
 return{
   'ThePrimeagen/harpoon',
   dependencies = { 'nvim-lua/plenary.nvim'},
@@ -12,8 +14,34 @@ return{
         menu = {
           width = vim.api.nvim_win_get_width(0) - 20,
         },
-
       },
     })
-  end
+  end,
+  keys = {
+    {"<leader>a",":lua require('harpoon.mark').add_file()<cr>", opts},
+
+    {"<Space>1",":lua require('harpoon.ui').nav_file(1)<cr>", opts},
+    {"<Space>2",":lua require('harpoon.ui').nav_file(2)<cr>", opts},
+    {"<Space>3",":lua require('harpoon.ui').nav_file(3)<cr>", opts},
+    {"<Space>4",":lua require('harpoon.ui').nav_file(4)<cr>", opts},
+    {"<Space>5",":lua require('harpoon.ui').nav_file(5)<cr>", opts},
+    {"<Space>6",":lua require('harpoon.ui').nav_file(6)<cr>", opts},
+    {"<Space>7",":lua require('harpoon.ui').nav_file(7)<cr>", opts},
+    {"<Space>8",":lua require('harpoon.ui').nav_file(8)<cr>", opts},
+    {"<Space>9",":lua require('harpoon.ui').nav_file(9)<cr>", opts},
+
+    {"<space>hc", "lua require('harpoon.mark').clear_all()<cr>", opts},
+
+    {"<leader>j",":lua require('harpoon.ui').toggle_quick_menu()<cr>", opts},
+
+    {"<space>t",
+      function()
+        local index = require("harpoon.mark").get_index_of(vim.fn.bufname())
+        require("harpoon.mark").rm_file(index)
+      end
+    },
+
+    {"<leader>n", ":lua require('harpoon.ui').nav_next()<cr>", opts},
+    {"<leader>v", ":lua require('harpoon.ui').nav_prev()<cr>", opts},
+  },
 }

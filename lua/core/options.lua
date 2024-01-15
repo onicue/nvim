@@ -1,31 +1,37 @@
 local opt = vim.opt
 local g  = vim.g
 
+g.mapleader = "ö"
+
 opt.modifiable = true --for Lazy
 
 opt.fileencoding = 'utf-8'
-opt.termguicolors = true -- enable 24-bit RGB color in the TUI
-g.mapleader = "ö"
 
-opt.confirm = false -- raise a dialogue asking if you wish to save changed files
+opt.confirm = false --raise a dialogue asking if you wish to save changed files
 opt.virtualedit = "block"
+-- opt.clipboard  = 'unnamedplus' -- using system buffer
 
 ----------ui-------------
 opt.cmdheight = 0
 opt.laststatus = 3
 
-opt.number = false
-opt.relativenumber = false
+opt.background = "light"
+
+opt.list = true
+
+opt.number = true
+opt.relativenumber = true
 
 opt.cursorline = true
-opt.colorcolumn = "+1"
+opt.colorcolumn = "0"
 opt.cursorcolumn = false
 opt.signcolumn = "no"-- auto/yes:1/no
 
-opt.guicursor = "n-c:hor50,i-ci-ve:ver25" -- horizontal in normal, vertical in insert
+opt.guicursor = "n:block,i-ci-c:ver25,r-v-cr:hor50,a:blinkon0"
 
+opt.textwidth = 14
 
-opt.pumblend = 15 --transparency
+opt.pumblend = 15
 opt.winblend = 5
 opt.pumheight = 10
 
@@ -38,9 +44,10 @@ opt.fillchars = {
   eob = " ",
 }
 
+opt.termguicolors = true -- enable 24-bit RGB color in the TUI
 -------interaction-------
 opt.tabstop = 2
-opt.shiftwidth = 2 -- number of spaces to use for each step of (auto)indent, 0 means use 'tabstop' value
+opt.shiftwidth = 0 -- number of spaces to use for each step of (auto)indent, 0 means use 'tabstop' value
 opt.numberwidth = 3 --Indentation from the edge
 opt.softtabstop = -1 -- number of spaces that a <Tab> counts for while performing editing operations, negative means use 'shiftwidth' valuept.textwidth = 80 -- set 80 character as default line length
 opt.autoindent = false
@@ -65,8 +72,9 @@ opt.expandtab = true
 opt.scrolloff = 10
 opt.visualbell = false
 
----swap|bufer|clipboard--
-opt.clipboard  = 'unnamedplus' -- using system buffer
+opt.helpheight = 15
+
+--------swap|bufer-------
 opt.backup = false --creates a backup in the current directory
 opt.backupcopy = "auto" -- best option for backup strategy
 opt.backupdir = ("%s/backup//"):format(vim.fn.stdpath("state"))
@@ -77,11 +85,9 @@ opt.writebackup = true -- protect against crash during write
 opt.undofile = true -- save undo history to an undo file on BufWrite
 opt.undolevels = 100 -- maximum number of changes than can be undone
 
-
 -------additionally------
 opt.showmode = false -- hide current mode in command-line window
 opt.breakindent = true -- continue indenting wrapped lines
-
 opt.pastetoggle = "<F2>" -- toggling paste mode when press this key
 
 opt.timeoutlen = 750
