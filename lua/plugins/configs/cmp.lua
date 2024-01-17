@@ -8,8 +8,8 @@ return {
     'hrsh7th/cmp-nvim-lsp-signature-help',
     'onsails/lspkind-nvim',
     --snip--
-    'L3MON4D3/LuaSnip',
-    'saadparwaiz1/cmp_luasnip',
+    'dcampos/nvim-snippy',
+    'dcampos/cmp-snippy'
   },
   -- lazy = true,
   -- event = "InsertEnter",
@@ -22,7 +22,7 @@ return {
 
       snippet = {
         expand = function(args)
-          require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+          require('snippy').expand_snippet(args.body)
         end,
       },
 
@@ -38,7 +38,7 @@ return {
       }),
       sources = cmp.config.sources({
         { name = 'nvim_lsp'},
-        { name = 'luasnip'},
+        { name = 'snippy'},
         { name = 'nvim_lsp_signature_help'},
         { name = 'buffer'},
         { name = 'path', option =  {
