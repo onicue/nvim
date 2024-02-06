@@ -15,7 +15,7 @@ opt.virtualedit = "block"
 opt.cmdheight = 0
 opt.laststatus = 3
 
-opt.background = "light"
+opt.background = "dark"
 
 opt.list = true
 
@@ -29,13 +29,12 @@ opt.signcolumn = "no"-- auto/yes:1/no
 
 opt.guicursor = "n:block,i-ci-c:ver25,r-v-cr:hor50,a:blinkon0"
 
-opt.textwidth = 14
-
 opt.pumblend = 15
 opt.winblend = 5
 opt.pumheight = 10
 
 opt.wrap = false  -- disable line wrap
+g.nord_underline = 1 --for underline
 
 opt.fillchars = {
   foldopen = "",
@@ -55,7 +54,7 @@ opt.autoindent = false
 opt.hlsearch = false
 opt.showmatch = true -- highlight matching <[{()}]>
 
-opt.mouse = ""-- ignore mouse completely
+opt.mouse = "" -- ignore mouse completely
 
 opt.splitright = true -- when :vsplit, put the new window right of the current one
 opt.splitbelow = true -- when :split, put the new window below the current one

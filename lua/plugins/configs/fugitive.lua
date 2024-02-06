@@ -4,6 +4,5 @@ return{
   event = "VeryLazy",
   keys = {
     {"<leader>gs", vim.cmd.Git},
-
   },
 }
