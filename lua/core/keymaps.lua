@@ -19,6 +19,9 @@ vim.keymap.set("n", "<C-k>", ":m .-2<CR>==")
 vim.keymap.set({"i", "n", "v"}, "<C-l>", "$")
 vim.keymap.set({"i", "n", "v"}, "<C-h>", "0")
 
+vim.keymap.set("n", "(g", vim.diagnostic.goto_next)
+vim.keymap.set("n", ")g", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
 ----indentation---
 
 vim.keymap.set("v", "<", "<gv")

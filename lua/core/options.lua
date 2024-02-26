@@ -111,4 +111,35 @@ opt.shortmess = { -- shorten message in prompt window
   S = true, -- don't show search count message when searching
 }
 
+--------diagnostic-------
+
+vim.diagnostic.config({
+  severity_sort = true,
+  underline = false,
+  update_in_insert = false,
+
+  virtual_text = {
+    spacing = 7,
+    prefix = '●',
+    source = false
+  },
+
+  float = {
+    source = "always",  -- Or "if_many"
+  },
+  signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = '',
+            [vim.diagnostic.severity.WARN] = '',
+            [vim.diagnostic.severity.HINT] = '',
+        },
+        linehl = {
+            [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+        },
+        numhl = {
+            [vim.diagnostic.severity.WARN] = 'WarningMsg',
+        },
+    },
+})
+
 opt.wildmode = { "longest", "full" }
