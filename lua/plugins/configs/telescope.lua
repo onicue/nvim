@@ -10,7 +10,7 @@ return {
         prompt_prefix = " ",
         show_line = false,
         selection_caret = " ",
-        entry_prefix = "  ",
+        entry_prefix = " ",
         initial_mode = "insert",
         prompt_title = false,
         results_title = false,
@@ -19,8 +19,14 @@ return {
         sorting_strategy = "descending",
         layout_strategy = "vertical",
         layout_config = {
-          horizontal = { mirror = false },
-          vertical = { mirror = true },
+          vertical = {
+            mirror = true,
+            preview_height = 0.5,
+            height = 0.7,
+            preview_cutoff = 40,
+            prompt_position = "bottom",
+            width = 0.5
+          },
         },
         file_ignore_patterns = {".git/*", ".cache", ".ssh"},
         winblend = 5,
@@ -31,8 +37,9 @@ return {
         },
 
         color_devicons = true,
+
         use_less = true,
-        path_display = {},
+        path_display = { "shorten"},
 
         set_env = { ["COLORTERM"] = "truecolor" },
 
