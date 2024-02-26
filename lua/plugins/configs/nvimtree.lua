@@ -28,10 +28,13 @@ return{
       git = { enable = false },
       update_cwd = true,
       filters = { custom = { ".git" } },
+      renderer = {
+        root_folder_modifier = ":t", --false
+      }
     })
 
     vim.g.nvim_tree_indent_markers = 1
-    vim.g.nvim_tree_highlight_opened_files = 1
+    vim.g.nvim_tree_highlight_opened_files = 0
     vim.g.nvim_tree_width = 20
     vim.g.nvim_tree_special_files = {
       [[ "README.md" = 0 ]],

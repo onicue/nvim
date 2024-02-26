@@ -2,7 +2,7 @@ local opts = {noremap = true ,silent = true}
 
 return{
   'ThePrimeagen/harpoon',
-  dependencies = { 'nvim-<cmd>lua/plenary.nvim'},
+  dependencies = { 'nvim-lua/plenary.nvim'},
   event = "VeryLazy",
   lazy = true,
   config = function ()
