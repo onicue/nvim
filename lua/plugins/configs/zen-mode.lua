@@ -1,3 +1,5 @@
+local opts = {silent = true, noremap = true}
+
 return{
   "folke/zen-mode.nvim",
   lazy = true,
@@ -26,7 +28,7 @@ return{
     }
   },
   keys = {
-    {"<leader>zz", ":ZenMode<cr>", {silent = true, noremap = true}},
+    {"<leader>zz", "<cmd>ZenMode<cr>", opts},
     {"<leader>zZ", function ()
       require("zen-mode").toggle({
         window = {

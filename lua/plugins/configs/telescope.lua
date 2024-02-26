@@ -1,3 +1,5 @@
+local opts = {silent = true, noremap = true}
+
 return {
   'nvim-telescope/telescope.nvim', branch = '0.1.x',
   dependencies = { 'nvim-lua/plenary.nvim',},
@@ -57,11 +59,11 @@ return {
     }}
   end,
   keys = {
-    {"<leader>ff", ":Telescope find_files<cr>",{silent = true, noremap = true}},
+    {"<leader>ff", "<cmd>Telescope find_files<cr>", opts},
     {'<leader>fg', function()
       require('telescope.builtin').grep_string()
     end},
-    {"<leader>fb", ":Telescope buffers<cr>", {silent = true, noremap = true}},
-    {"<leader>xx", ":Telescope diagnostics<cr>", {silent = true, noremap = true}},
+    {"<leader>fb", "<cmd>Telescope buffers<cr>", opts},
+    {"<leader>xx", "<cmd>Telescope diagnostics<cr>", opts},
   }
 }

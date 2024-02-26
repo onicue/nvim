@@ -1,8 +1,8 @@
-local opts = {silent = true}
+local opts = {noremap = true ,silent = true}
 
 return{
   'ThePrimeagen/harpoon',
-  dependencies = { 'nvim-lua/plenary.nvim'},
+  dependencies = { 'nvim-<cmd>lua/plenary.nvim'},
   event = "VeryLazy",
   lazy = true,
   config = function ()
@@ -18,21 +18,21 @@ return{
     })
   end,
   keys = {
-    {"<leader>a",":lua require('harpoon.mark').add_file()<cr>", opts},
+    {"<leader>a","<cmd>lua require('harpoon.mark').add_file()<cr>", opts},
 
-    {"<Space>1",":lua require('harpoon.ui').nav_file(1)<cr>", opts},
-    {"<Space>2",":lua require('harpoon.ui').nav_file(2)<cr>", opts},
-    {"<Space>3",":lua require('harpoon.ui').nav_file(3)<cr>", opts},
-    {"<Space>4",":lua require('harpoon.ui').nav_file(4)<cr>", opts},
-    {"<Space>5",":lua require('harpoon.ui').nav_file(5)<cr>", opts},
-    {"<Space>6",":lua require('harpoon.ui').nav_file(6)<cr>", opts},
-    {"<Space>7",":lua require('harpoon.ui').nav_file(7)<cr>", opts},
-    {"<Space>8",":lua require('harpoon.ui').nav_file(8)<cr>", opts},
-    {"<Space>9",":lua require('harpoon.ui').nav_file(9)<cr>", opts},
+    {"<Space>1","<cmd>lua require('harpoon.ui').nav_file(1)<cr>", opts},
+    {"<Space>2","<cmd>lua require('harpoon.ui').nav_file(2)<cr>", opts},
+    {"<Space>3","<cmd>lua require('harpoon.ui').nav_file(3)<cr>", opts},
+    {"<Space>4","<cmd>lua require('harpoon.ui').nav_file(4)<cr>", opts},
+    {"<Space>5","<cmd>lua require('harpoon.ui').nav_file(5)<cr>", opts},
+    {"<Space>6","<cmd>lua require('harpoon.ui').nav_file(6)<cr>", opts},
+    {"<Space>7","<cmd>lua require('harpoon.ui').nav_file(7)<cr>", opts},
+    {"<Space>8","<cmd>lua require('harpoon.ui').nav_file(8)<cr>", opts},
+    {"<Space>9","<cmd>lua require('harpoon.ui').nav_file(9)<cr>", opts},
 
-    {"<space>hc", "lua require('harpoon.mark').clear_all()<cr>", opts},
+    {"<space>hc", "<cmd>lua require('harpoon.mark').clear_all()<cr>", opts},
 
-    {"<leader>j",":lua require('harpoon.ui').toggle_quick_menu()<cr>", opts},
+    {"<leader>j", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", opts},
 
     {"<space>t",
       function()
@@ -41,7 +41,8 @@ return{
       end
     },
 
-    {"<leader>n", ":lua require('harpoon.ui').nav_next()<cr>", opts},
-    {"<leader>v", ":lua require('harpoon.ui').nav_prev()<cr>", opts},
+    {"<leader>n", "<cmd>lua require('harpoon.ui').nav_next()<cr>", opts},
+    {"<leader>v", "<cmd>lua require('harpoon.ui').nav_prev()<cr>", opts},
   },
 }
+
