@@ -13,6 +13,10 @@ vim.keymap.set("i", "<C-h>", "<C-o>b")
 vim.keymap.set("n", "(g", vim.diagnostic.goto_next)
 vim.keymap.set("n", ")g", vim.diagnostic.goto_prev)
 
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
+vim.keymap.set("n", "<", "<<")
+vim.keymap.set("n", ">", ">>")
 -----Quickfix-----
 
 vim.keymap.set("n", "<leader>mk", "<cmd>lnext<CR>zz")
