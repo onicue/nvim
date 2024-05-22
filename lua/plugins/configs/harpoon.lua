@@ -32,7 +32,8 @@ return{
 
     {"<space>hc", "<cmd>lua require('harpoon.mark').clear_all()<cr>", opts},
 
-    {"<leader>j", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", opts},
+    {"<leader>fh", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", opts},
+    {"<leader>Fh", "<cmd>Telescope harpoon marks<cr>", opts},
 
     {"<space>t",
       function()
@@ -41,8 +42,8 @@ return{
       end
     },
 
-    {"<leader>n", "<cmd>lua require('harpoon.ui').nav_next()<cr>", opts},
-    {"<leader>v", "<cmd>lua require('harpoon.ui').nav_prev()<cr>", opts},
+    {"<leader>hn", "<cmd>lua require('harpoon.ui').nav_next()<cr>", opts},
+    {"<leader>hv", "<cmd>lua require('harpoon.ui').nav_prev()<cr>", opts},
   },
 }
 

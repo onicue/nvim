@@ -19,7 +19,7 @@ return{
     window = {
       backdrop = 0.90,
       -- height = 0.95,
-      width = 80,
+      width = 0.6,
       options = {
         number = false,
         relativenumber = false,
@@ -32,7 +32,7 @@ return{
     {"<leader>zZ", function ()
       require("zen-mode").toggle({
         window = {
-          width = 90
+          width = 0.9
         }
       })
     end}

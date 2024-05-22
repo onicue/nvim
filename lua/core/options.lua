@@ -1,7 +1,7 @@
 local opt = vim.opt
 local g  = vim.g
 
-g.mapleader = "ö"
+g.mapleader = " "
 
 opt.modifiable = true --for Lazy
 
@@ -25,7 +25,7 @@ opt.relativenumber = true
 opt.cursorline = true
 opt.colorcolumn = "0"
 opt.cursorcolumn = false
-opt.signcolumn = "no"-- auto/yes:1/no
+opt.signcolumn = "no" -- auto/yes:1/no
 
 opt.guicursor = "n:block,i-ci-c:ver25,r-v-cr:hor50,a:blinkon0"
 
@@ -87,7 +87,6 @@ opt.undolevels = 100 -- maximum number of changes than can be undone
 -------additionally------
 opt.showmode = false -- hide current mode in command-line window
 opt.breakindent = true -- continue indenting wrapped lines
-opt.pastetoggle = "<F2>" -- toggling paste mode when press this key
 
 opt.timeoutlen = 750
 opt.updatetime = 500
@@ -111,35 +110,50 @@ opt.shortmess = { -- shorten message in prompt window
   S = true, -- don't show search count message when searching
 }
 
+opt.wildmode = { "longest", "full" }
 --------diagnostic-------
 
 vim.diagnostic.config({
   severity_sort = true,
-  underline = false,
+  underline = true,
   update_in_insert = false,
 
+  --can be false
   virtual_text = {
-    spacing = 7,
-    prefix = '●',
-    source = false
+    spacing = 0,
+    prefix = '',
+    source = false,
+    virt_text_hide = false,
+    virt_text_pos = 'right_align',
+    suffix = "",
+    format = function(diagnostic) --change if u wanna see the messages
+        return ""
+      end
   },
 
   float = {
-    source = "always",  -- Or "if_many"
+    source = "if_many"
   },
-  signs = {
-        text = {
-            [vim.diagnostic.severity.ERROR] = '',
-            [vim.diagnostic.severity.WARN] = '',
-            [vim.diagnostic.severity.HINT] = '',
-        },
-        linehl = {
-            [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
-        },
-        numhl = {
-            [vim.diagnostic.severity.WARN] = 'WarningMsg',
-        },
-    },
-})
 
-opt.wildmode = { "longest", "full" }
+  -- change highlight
+  -- signs = {
+  --       text = {
+  --           [vim.diagnostic.severity.ERROR] = '',
+  --           [vim.diagnostic.severity.WARN] = '',
+  --           [vim.diagnostic.severity.HINT] = '',
+  --           [vim.diagnostic.severity.INFO] = '',
+  --       },
+  --       linehl = {
+  --           [vim.diagnostic.severity.ERROR] = '',
+  --           [vim.diagnostic.severity.WARN] = '',
+  --           [vim.diagnostic.severity.HINT] = '',
+  --           [vim.diagnostic.severity.INFO] = '',
+  --       },
+  --       numhl = {
+  --           [vim.diagnostic.severity.ERROR] = 'DiagnosticError',
+  --           [vim.diagnostic.severity.WARN] = 'DiagnosticWarn',
+  --           [vim.diagnostic.severity.HINT] = 'DiagnosticHint',
+  --           [vim.diagnostic.severity.INFO] = 'DiagnosticInfo',
+  --       },
+  -- },
+})

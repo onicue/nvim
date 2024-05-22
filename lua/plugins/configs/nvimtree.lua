@@ -43,6 +43,6 @@ return{
     }
   end,
   keys = {
-    {"<leader>fj", "<cmd>NvimTreeToggle<cr>", opts}
+    {"fj", "<cmd>NvimTreeToggle<cr>", opts},
   }
 }
