@@ -10,13 +10,16 @@ vim.keymap.set("n", "<leader>qz", "<cmd>bd<cr>")
 
 -----movement-----
 
-vim.keymap.set("i", "<C-l>", "<C-o>w")
-vim.keymap.set("i", "<C-h>", "<C-o>b")
+vim.keymap.set("i", "<C-l>", "<S-Right>")
+vim.keymap.set("i", "<C-h>", "<S-Left>")
 
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("n", "<", "<<")
 vim.keymap.set("n", ">", ">>")
+
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", {expr = true,})
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", {expr = true,})
 
 -----Quickfix-----
 

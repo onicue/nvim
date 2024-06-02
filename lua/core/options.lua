@@ -33,7 +33,7 @@ opt.pumblend = 15
 opt.winblend = 5
 opt.pumheight = 10
 
-opt.wrap = false  -- disable line wrap
+opt.wrap = true  -- disable line wrap
 g.nord_underline = 1 --for underline
 
 opt.fillchars = {
