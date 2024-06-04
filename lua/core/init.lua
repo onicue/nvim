@@ -2,7 +2,7 @@
 require("custom")
 
 ---------- mini.deps plugins ----------
-require("core.plugin").init() -- TODO
+require("core.plugin").init()
 
 ---------- configuration ----------
 require("config")

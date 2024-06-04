@@ -1,10 +1,16 @@
 -- local color = require("custom.66").base_10
 
 return {
-	mini = {
-		install = {},
+	plugin = {
+		install = {
+			{
+				source = 'nvim-treesitter/nvim-treesitter',
+				checkout = 'master',
+				hooks = { post_checkout = function() vim.cmd('TSUpdate') end },
+			},
+		},
 		disable = {},
-	}, -- plugin
+	},
 
 	ui = {
 		base66 = {
@@ -44,5 +50,5 @@ return {
 
 	nerd = true,
 	icon = {}, -- overwrite icons
-	text_icon = {}
+	text_icon = {},
 }

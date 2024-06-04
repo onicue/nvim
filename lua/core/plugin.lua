@@ -1,11 +1,11 @@
-local _o = require("configuration").mini
-local onicue = {}
+local _o = require("configuration").plugin
+local M = {}
 
-onicue.is_table = function(arg)
+M.is_table = function(arg)
 	return type(arg) == "table"
 end
 
-onicue.include = function()
+M.include = function()
 	for _, file in ipairs(vim.fn.readdir(vim.fn.stdpath("config") .. "/lua/plugin", [[v:val =~ '\.lua$']])) do
 		MiniDeps.later(function()
 			require("plugin." .. file:gsub("%.lua$", ""))
@@ -14,7 +14,7 @@ onicue.include = function()
 end
 
 -- TODO: colorful start
-onicue.start = function()
+M.start = function()
   local path_package = vim.fn.stdpath("data") .. "/site/"
   local mini_path = path_package .. "pack/deps/start/mini.nvim"
   if not vim.loop.fs_stat(mini_path) then
@@ -34,30 +34,28 @@ onicue.start = function()
   require("mini.deps").setup({ path = { package = path_package } })
 end
 
-onicue.install = function(args)
-	if onicue.is_table(args) then
+M.install = function(args)
+	if M.is_table(args) then
 		for _, plugin in ipairs(args) do
 			MiniDeps.add(plugin)
 		end
 	end
 end
 
-onicue.disable = function(args)
-	if onicue.is_table(args) then
+M.disable = function(args)
+	if M.is_table(args) then
 		for _, plugin in ipairs(args) do
 			vim.g["loaded_" .. plugin] = 1
 		end
 	end
 end
 
-onicue.init = function()
-	onicue.start()
-	-- onicue.config = vim.tbl_extend("force", _o, opts) -- force? why?
+M.init = function()
+	M.start()
+	M.include()
 
-	onicue.include()
-
-	onicue.install(_o.install)
-	onicue.disable(_o.disable)
+	M.install(_o.install)
+	M.disable(_o.disable)
 end
 
-return onicue
+return M
