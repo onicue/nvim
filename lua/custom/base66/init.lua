@@ -25,8 +25,8 @@ qr.base16 = {
 } -- base16
 
 qr.base40 = {
-  bg = "#",
-  fg = "#",
+	bg = "#",
+	fg = "#",
 } -- base40
 
 return qr

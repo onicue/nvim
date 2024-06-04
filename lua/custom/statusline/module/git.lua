@@ -1,7 +1,7 @@
 local qr = {}
 
-qr.git = function ()
-  return "git"
+qr.git = function()
+	return "git"
 end
 
 return qr
