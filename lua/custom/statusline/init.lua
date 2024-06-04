@@ -4,15 +4,14 @@ local qr = {}
 ---------- %= ----------
 qr["%="] = "%="
 
----------- seperator ----------
+---------- seperators ----------
 local hl = vim.api.nvim_set_hl
-
 for k, v in pairs(_o.seperator) do
 	hl(0, "StSep" .. k, { fg = v[2], bg = v[3], bold = v[4] })
 	qr["_" .. k] = "%#StSep" .. k .. "#" .. v[1]
 end
 
----------- module ----------
+---------- modules ----------
 for _, file in ipairs(_o.order) do
 	if file:sub(1, 1) ~= "_" and file ~= "%=" then
 		local module = require("custom.statusline.module." .. file)
