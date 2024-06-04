@@ -41,4 +41,8 @@ return {
 			smart = true, -- ui.tabline.smart
 		}, -- ui.tabline
 	}, -- ui
+
+	nerd = true,
+	icon = {}, -- overwrite icons
+	text_icon = {}
 }
