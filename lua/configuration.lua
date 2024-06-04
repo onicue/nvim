@@ -1,13 +1,17 @@
 -- local color = require("custom.66").base_10
 
 return {
-	plugin = {}, -- plugin
+	mini = {
+		install = {},
+		disable = {},
+	}, -- plugin
 
 	ui = {
 		base66 = {
 			enable = true,
 			theme = "gruvbox",
-		},
+		}, -- ui.base66
+
 		statusline = {
 			enable = true, -- ui.statusline.enable
 

@@ -15,9 +15,9 @@ end
 for _, file in ipairs(_o.order) do
 	if file:sub(1, 1) ~= "_" and file ~= "%=" then
 		local module = require("custom.statusline.module." .. file)
-    for k, v in pairs(module) do
-      qr[k] = v
-    end
+		for k, v in pairs(module) do
+		  qr[k] = v
+		end
 	end
 end
 

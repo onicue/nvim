@@ -1,4 +1,7 @@
 ---------- options ----------
+require("config.plugin")
+
+---------- options ----------
 require("config.option")
 
 ---------- mappings ----------
