@@ -1,20 +1,28 @@
--- local color = require("custom.base66")
+-- local color = require("custom.66").base_10
 
 return {
 	plugin = {}, -- plugin
 
 	ui = {
+		base66 = {
+			enable = true,
+			theme = "gruvbox",
+		},
 		statusline = {
 			enable = true, -- ui.statusline.enable
+
+			setup = {
+				date = "f",
+			},
 
 			icon = {
 				mode = "  ",
 			}, -- ui.statusline.icon
 
 			--[[
-		  --["key"] = { "sep", "#foreground", "#background", bold },
-      --["q"] = { "/", "#AFF3BD", "#FADDFD", true },
-      --]]
+			--["key"] = { "sep", "#foreground", "#background", bold },
+			--["q"] = { "/", "#AFF3BD", "#FADDFD", true },
+			--]]
 			seperator = {
 				["l"] = { "+", "#FDFDFD", "#e2abd3", true },
 				["f"] = { "-", "#EDADaF", "#DDDDDD", false },
