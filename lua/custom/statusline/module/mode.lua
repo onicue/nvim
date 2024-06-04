@@ -1,4 +1,4 @@
-local _o = require("configuration").ui.statusline.icon
+local _o = require("general").ui.statusline.icon
 
 local code = {
 	["n"] = { "NORMAL", "Normal" },

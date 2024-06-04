@@ -1,1 +1,1 @@
-local _o = require("configuration").ui.base66
+local _o = require("general").ui.base66

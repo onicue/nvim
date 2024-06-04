@@ -1,4 +1,4 @@
-local _o = require("configuration").plugin
+local _o = require("general").plugin
 local M = {}
 
 M.is_table = function(arg)

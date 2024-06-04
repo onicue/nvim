@@ -1,4 +1,4 @@
-local _o = require("configuration").ui.statusline
+local _o = require("general").ui.statusline
 local qr = {}
 
 ---------- %= ----------

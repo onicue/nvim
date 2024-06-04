@@ -1,4 +1,4 @@
-local config = require("configuration")
+local config = require("general")
 
 local icons = icons or {}
 

@@ -1,4 +1,4 @@
-local _o = require("configuration").ui -- { statusline, tabline }
+local _o = require("general").ui -- { statusline, tabline }
 local opt = vim.opt
 
 ---------- statusline ----------
